@@ -1,19 +1,20 @@
 header {
-background-color: #183C63;
-color: #FFFFFF;
+    background-color: #183C63;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-b{
+b {
     color: blue;
 }
 
-.img1{
-    width: 80px;
-    height: 80px;
-
+.image1 {
+    text-align: center;
+    margin: 20px 0;
 }
 
-.image1{
-    width: 30px;
-    height: 30px;
+.image1 img {
+    width: 300px;
+    height: auto;
 }
