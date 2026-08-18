@@ -1,20 +1,202 @@
+/* Configurações Gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcf8f9; /* Fundo off-white suave */
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
 header {
-    background-color: #183C63;
-    color: white;
+    background-color: #f7d6d7; /* Rosa bebê elegante */
+    color: #4a3b3c; /* Texto escuro para contraste suave */
     text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+header p {
+    margin: 10px 0 0 0;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* Caixa de Imagem no Topo (Hero) */
+.hero-banner {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.hero-image-container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+}
+
+/* Legenda elegante sobre a imagem */
+.hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.hero-overlay span {
+    color: white;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 400;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-b {
-    color: blue;
-}
-
-.image1 {
+/* Introdução do Texto */
+.intro {
     text-align: center;
-    margin: 20px 0;
+    margin-bottom: 50px;
 }
 
-.image1 img {
-    width: 300px;
-    height: auto;
+.intro h2 {
+    color: #4a3b3c;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.author {
+    color: #b38f91;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.intro-text {
+    max-width: 700px;
+    margin: 20px auto;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* Organização dos Tópicos (Grid de Cartões) */
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.topic-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 5px solid #f7d6d7; /* Detalhe em rosa bebê no topo do card */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease;
+}
+
+/* Efeito flutuante ao passar o mouse */
+.topic-card:hover {
+    transform: translateY(-5px);
+}
+
+.topic-card h3 {
+    margin: 0 0 5px 0;
+    color: #4a3b3c;
+    font-size: 1.4rem;
+}
+
+.topic-card h4 {
+    margin: 0 0 15px 0;
+    color: #b38f91;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+}
+
+.topic-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+/* Estilo do Encerramento (Rodapé) */
+footer {
+    background-color: #f7d6d7; /* Rosa bebê combinando com o cabeçalho */
+    color: #4a3b3c;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px; /* Garante um espaçamento do conteúdo acima */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.footer-brand {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.footer-content p {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+/* Links das Redes Sociais */
+.social-links {
+    margin-bottom: 25px;
+}
+
+.social-links a {
+    color: #4a3b3c;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse nos links */
+.social-links a:hover {
+    color: #b38f91; /* Tom de rosa mais escuro para destaque */
+}
+
+.copyright {
+    font-size: 0.8rem !important;
+    opacity: 0.6;
+    margin-top: 20px;
 }
