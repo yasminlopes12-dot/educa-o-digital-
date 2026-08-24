@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Meu Blog Fashion</title>
+</head>
+
+<body>
+
+    <header class="top-header">
+        <!-- Ícone do Menu de Hambúrguer (3 Barrinhas) -->
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <h1 class="blog-logo">Meu Blog Fashion</h1>
+
+        <!-- Menu Lateral Deslizante -->
+        <nav class="side-nav" id="sideNav">
+            <div class="side-nav-header">
+                <span class="nav-title">Menu</span>
+                <span class="close-btn" id="closeBtn">&times;</span>
+            </div>
+
+            <!-- Caixa de Pesquisa no Topo do Menu -->
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar no blog..." class="search-input">
+            </div>
+
+            <div class="nav-links">
+                <span class="nav-category-label">Categorias</span>
+                <a href="index.html" class="active">Início</a>
+                <a href="historia-da-moda.html">História da Moda</a>
+                <a href="fofocas-moda.html">Fofocas & Bastidores</a>
+                <a href="tendencias.html">Tendências</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Capa Estética Clean -->
+    <section class="hero-aesthetic">
+        <div class="hero-inner">
+            <span class="tagline">✦ diário de estilo & tendências ✦</span>
+        </div>
+    </section>
+
+    <main>
+        <!-- Grade de Categorias -->
+        <h2 class="section-title">Explorar Seções</h2>
+        <section class="topics-grid">
+            
+            <article class="topic-card">
+                <h3>História da Moda</h3>
+                <p>Entenda o impacto cultural de cada época no modo de vestir da humanidade.</p>
+                <a href="historia-da-moda.html" class="btn-read">Ver Categoria</a>
+            </article>
+
+            <article class="topic-card">
+                <h3>Fofocas & Bastidores</h3>
+                <p>Segredos do mundo das grifes, polêmicas e o lifestyle da alta sociedade.</p>
+                <a href="fofocas-moda.html" class="btn-read">Ver Categoria</a>
+            </article>
+
+            <article class="topic-card">
+                <h3>Tendências do Momento</h3>
+                <p>Dicas de combinações, estética atual e peças-chave para o seu closet.</p>
+                <a href="tendencias.html" class="btn-read">Ver Categoria</a>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-brand">Meu Blog Fashion</p>
+            <p>Obrigado por acompanhar! Continue explorando o universo do estilo.</p>
+            
+            <div class="social-links">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Pinterest</a>
+                <a href="#" target="_blank">TikTok</a>
+            </div>
+            
+            <p class="copyright">&copy; 2026 Yasmin Lopes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript para abrir/fechar o menu lateral -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sideNav = document.getElementById('sideNav');
+        const closeBtn = document.getElementById('closeBtn');
+
+        menuToggle.addEventListener('click', () => {
+            sideNav.classList.add('open');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sideNav.classList.remove('open');
+        });
+    </script>
+</body>
+</html>

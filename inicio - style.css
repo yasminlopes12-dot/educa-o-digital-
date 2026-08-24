@@ -1,0 +1,338 @@
+/* Configurações Gerais */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fcf9f9;
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* Header Minimalista */
+.top-header {
+    background-color: #ffffff;
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid #f2e6e6;
+}
+
+.blog-logo {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #4a3b3c;
+}
+
+/* Botão das 3 barrinhas delicado */
+.menu-toggle {
+    position: absolute;
+    left: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: #4a3b3c;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.menu-toggle:hover span {
+    background-color: #b38f91;
+}
+
+/* Menu Lateral Deslizante (Gaveta) */
+.side-nav {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 280px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.05);
+    z-index: 1000;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.side-nav.open {
+    left: 0;
+}
+
+.side-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0e4e4;
+    padding-bottom: 12px;
+}
+
+.nav-title {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #4a3b3c;
+    font-weight: 600;
+}
+
+.close-btn {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #888;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #4a3b3c;
+}
+
+/* Caixa de Pesquisa no Menu */
+.search-container {
+    width: 100%;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e8dbdb;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    outline: none;
+    background-color: #faf6f6;
+    color: #4a4a4a;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+}
+
+.search-input:focus {
+    border-color: #b38f91;
+    background-color: #ffffff;
+}
+
+/* Links do Menu Lateral */
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.nav-category-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #b38f91;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.side-nav a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.side-nav a:hover,
+.side-nav a.active {
+    background-color: #f7d6d7;
+    color: #4a3b3c;
+    padding-left: 15px;
+}
+
+/* Capa Estética Elegante */
+.hero-aesthetic {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 50px 20px;
+    background-color: #f7d6d7;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.tagline {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #6b5355;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.hero-inner h2 {
+    font-size: 1.8rem;
+    color: #4a3b3c;
+    font-weight: 300;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 10px 20px 40px;
+}
+
+.section-title {
+    color: #4a3b3c;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+/* Matérias Mais Lidas */
+.popular-posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.popular-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #f0e6e6;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.01);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.badge-pop {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #b38f91;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.popular-card h3 {
+    font-size: 1.1rem;
+    color: #4a3b3c;
+    margin: 0 0 8px 0;
+    font-weight: 500;
+}
+
+.popular-card p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Grade de Categorias */
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.topic-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid #f0e6e6;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.topic-card h3 {
+    margin: 0 0 10px 0;
+    color: #4a3b3c;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.topic-card p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Botões Delicados */
+.btn-read {
+    align-self: flex-start;
+    padding: 6px 14px;
+    background-color: #f7d6d7;
+    color: #4a3b3c;
+    text-decoration: none;
+    border-radius: 15px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.2s;
+}
+
+.btn-read:hover {
+    background-color: #b38f91;
+    color: #ffffff;
+}
+
+/* Rodapé */
+footer {
+    background-color: #f5ebeb;
+    color: #4a3b3c;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    border-top: 1px solid #ece0e0;
+}
+
+.footer-brand {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.footer-content p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #4a3b3c;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.social-links a:hover {
+    color: #b38f91;
+}
+
+.copyright {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin-top: 15px;
+}
