@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Polêmicas de Styling | Meu Blog Fashion</title>
+</head>
+
+<body>
+
+    <header class="top-header">
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <h1 class="blog-logo">Meu Blog Fashion</h1>
+
+        <nav class="side-nav" id="sideNav">
+            <div class="side-nav-header">
+                <span class="nav-title">Menu</span>
+                <span class="close-btn" id="closeBtn">&times;</span>
+            </div>
+
+            <div class="search-container">
+                <input type="text" placeholder="Pesquisar no blog..." class="search-input">
+            </div>
+
+            <div class="nav-links">
+                <span class="nav-category-label">Categorias</span>
+                <a href="index.html">Início</a>
+                <a href="historia-da-moda.html">História da Moda</a>
+                <a href="fofocas-moda.html" class="active">Fofocas & Bastidores</a>
+                <a href="tendencias.html">Tendências</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="article-container">
+        
+        <header class="article-header">
+            <span class="article-category">✦ Bastidores & Polêmicas ✦</span>
+            <h1 class="article-title">Drama no Red Carpet: As Escolhas Mais Polêmicas dos Stylists e Grifes</h1>
+            <p class="article-meta">Por <b>Yasmin Lopes</b></p>
+        </header>
+
+        <article class="article-content">
+            
+            <p class="lead-paragraph">
+                O tapete vermelho deixou de ser apenas uma passarela de vestidos bonitos para se tornar um verdadeiro campo de batalha de marketing, contratos milionários e egos. Por trás de cada look épico (ou desastroso), existem desentendimentos de bastidores, vestidos de arquivo danificados e <i>stylists</i> desafiando as maiores casas de luxo do mundo.
+            </p>
+
+            <h2>1. Vestidos de Arquivo vs. Preservação Histórica</h2>
+            <p>
+                A maior febre entre as celebridades é resgatar peças vintage de acervos lendários. No entanto, essa tendência acendeu um debate tenso: até que ponto vale a pena arriscar a integridade de um vestido histórico por alguns minutos de fotos no Met Gala? Os bastidores esquentaram com historiadores acusando <i>stylists</i> de colocarem o engajamento acima da preservação cultural.
+            </p>
+
+            <h2>2. As Tretas Silenciosas entre Stylists e Grifes</h2>
+            <p>
+                Nem tudo são flores na hora de "emprestar" um visual. Um dos maiores segredos dos bastidores são as brigas por exclusividade. Muitas vezes, grifes famosas barram o empréstimo de vestidos para certas celebridades de última hora ou tentam impor alterações no visual sem o consentimento da equipe da estrela — o que já fez <i>stylists</i> famosos trocarem o look da celebridade dentro da van a caminho do evento!
+            </p>
+
+            <h2>3. Sustentabilidade ou Estratégia? O Reuso de Looks</h2>
+            <p>
+                Repetir vestido no Red Carpet costumava ser visto como um erro brutal. Hoje, virou um manifesto. Celebridades que decidem "reciclar" vestidos icônicos de premiações passadas ou adaptar peças antigas dominam as manchetes. Mas fica a dúvida no ar: é conscientização genuína ou apenas uma jogada mestre de relações públicas para viralizar?
+            </p>
+
+            <!-- Aviso do próximo post -->
+            <div class="next-edition-box">
+                <p>✨ <b>Próxima matéria desta categoria:</b> Em breve novos bastidores do mundo da moda!</p>
+            </div>
+
+        </article>
+
+        <div class="back-link-container">
+            <a href="index.html" class="btn-read">← Voltar para o Início</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-brand">Meu Blog Fashion</p>
+            <p>Obrigado por acompanhar! Continue explorando o universo do estilo.</p>
+            
+            <div class="social-links">
+                <a href="#" target="_blank">Instagram</a>
+                <a href="#" target="_blank">Pinterest</a>
+                <a href="#" target="_blank">TikTok</a>
+            </div>
+            
+            <p class="copyright">&copy; 2026 Yasmin Lopes. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const sideNav = document.getElementById('sideNav');
+        const closeBtn = document.getElementById('closeBtn');
+
+        menuToggle.addEventListener('click', () => {
+            sideNav.classList.add('open');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            sideNav.classList.remove('open');
+        });
+    </script>
+</body>
+</html>
