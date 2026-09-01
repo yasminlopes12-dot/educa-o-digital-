@@ -4,14 +4,262 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Meu Blog Fashion</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #ffffff;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        .top-header {
+            background-color: #ffffff;
+            padding: 15px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid #f0e8e8;
+        }
+
+        .blog-logo {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .menu-toggle {
+            position: absolute;
+            left: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 20px;
+            height: 12px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: #333333;
+            border-radius: 2px;
+        }
+
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 260px;
+            height: 100%;
+            background-color: #ffffff;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.08);
+            z-index: 1000;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .side-nav.open {
+            left: 0;
+        }
+
+        .side-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f0e4e4;
+            padding-bottom: 10px;
+        }
+
+        .nav-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4a3b3c;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .search-container {
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #e8dbdb;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            outline: none;
+            background-color: #faf6f6;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-category-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #b38f91;
+            font-weight: 600;
+        }
+
+        .side-nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 8px;
+            border-radius: 4px;
+        }
+
+        .side-nav a:hover,
+        .side-nav a.active {
+            background-color: #f7d6d7;
+            color: #4a3b3c;
+        }
+
+        .hero-aesthetic {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #faf4f4;
+            border-bottom: 1px solid #f0e8e8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .tagline {
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #b38f91;
+            text-transform: uppercase;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 0 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .topic-card {
+            border: 1px solid #f0e8e8;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .topic-card h3 {
+            margin-top: 0;
+            font-size: 1.05rem;
+            color: #2c2c2c;
+        }
+
+        .topic-card p {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .btn-read {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #f7d6d7;
+            color: #4a3b3c;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            align-self: center;
+        }
+
+        footer {
+            background-color: #faf5f5;
+            color: #4a3b3c;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+            border-top: 1px solid #f0e8e8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer-brand {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .footer-content p {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            color: #4a3b3c;
+            text-decoration: none;
+            margin: 0 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .copyright {
+            font-size: 0.7rem;
+            opacity: 0.5;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
 
     <header class="top-header">
-        <!-- Ícone do Menu de Hambúrguer (3 Barrinhas) -->
         <div class="menu-toggle" id="menuToggle">
             <span></span>
             <span></span>
@@ -20,14 +268,12 @@
 
         <h1 class="blog-logo">Meu Blog Fashion</h1>
 
-        <!-- Menu Lateral Deslizante -->
         <nav class="side-nav" id="sideNav">
             <div class="side-nav-header">
                 <span class="nav-title">Menu</span>
                 <span class="close-btn" id="closeBtn">&times;</span>
             </div>
 
-            <!-- Caixa de Pesquisa no Topo do Menu -->
             <div class="search-container">
                 <input type="text" placeholder="Pesquisar no blog..." class="search-input">
             </div>
@@ -42,7 +288,6 @@
         </nav>
     </header>
 
-    <!-- Capa Estética Clean -->
     <section class="hero-aesthetic">
         <div class="hero-inner">
             <span class="tagline">✦ diário de estilo & tendências ✦</span>
@@ -50,7 +295,6 @@
     </section>
 
     <main>
-        <!-- Grade de Categorias -->
         <h2 class="section-title">Explorar Seções</h2>
         <section class="topics-grid">
             
@@ -90,7 +334,6 @@
         </div>
     </footer>
 
-    <!-- Script JavaScript para abrir/fechar o menu lateral -->
     <script>
         const menuToggle = document.getElementById('menuToggle');
         const sideNav = document.getElementById('sideNav');

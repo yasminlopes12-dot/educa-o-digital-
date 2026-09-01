@@ -4,8 +4,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Polêmicas de Styling | Meu Blog Fashion</title>
+    <title>Polêmicas de Red Carpet | Meu Blog Fashion</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: #ffffff;
+            color: #2c2c2c;
+            line-height: 1.6;
+        }
+
+        /* Header Minimalista */
+        .top-header {
+            background-color: #ffffff;
+            padding: 15px 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 1px solid #f0e8e8;
+        }
+
+        .blog-logo {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #333333;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Botão do Menu */
+        .menu-toggle {
+            position: absolute;
+            left: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 20px;
+            height: 12px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 2px;
+            width: 100%;
+            background-color: #333333;
+            border-radius: 2px;
+        }
+
+        /* Menu Lateral Deslizante */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 260px;
+            height: 100%;
+            background-color: #ffffff;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.08);
+            z-index: 1000;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: left 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .side-nav.open {
+            left: 0;
+        }
+
+        .side-nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #f0e4e4;
+            padding-bottom: 10px;
+        }
+
+        .nav-title {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #4a3b3c;
+            font-weight: 600;
+        }
+
+        .close-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+
+        .search-container {
+            width: 100%;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #e8dbdb;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            outline: none;
+            background-color: #faf6f6;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .nav-category-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #b38f91;
+            font-weight: 600;
+        }
+
+        .side-nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 6px 8px;
+            border-radius: 4px;
+        }
+
+        .side-nav a:hover,
+        .side-nav a.active {
+            background-color: #f7d6d7;
+            color: #4a3b3c;
+        }
+
+        /* Área do Artigo */
+        .article-container,
+        .article-header,
+        .article-title {
+            background: none !important;
+            background-color: transparent !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        .article-container {
+            width: 100%;
+            max-width: 650px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .article-header {
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0e8e8;
+        }
+
+        .article-category {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #b38f91;
+            font-weight: 600;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .article-title {
+            font-size: 1.4rem;
+            color: #222222;
+            font-weight: 600;
+            margin: 10px 0;
+            line-height: 1.3;
+        }
+
+        .article-meta {
+            font-size: 0.8rem;
+            color: #777777;
+            font-style: italic;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .lead-paragraph {
+            font-size: 0.95rem;
+            color: #111111;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .article-content h2 {
+            color: #222222;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            line-height: 1.3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-left: 3px solid #b38f91;
+            padding-left: 8px;
+        }
+
+        .article-content p {
+            font-size: 0.9rem;
+            color: #383838;
+            margin-bottom: 15px;
+        }
+
+        /* AJUSTE DAS IMAGENS (Sem cortar a foto) */
+        .article-image {
+            margin: 20px 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        .article-image img {
+            max-width: 450px; /* Tamanho proporcional perfeito */
+            width: 100%;
+            height: auto;     /* Mostra a imagem inteira sem cortes */
+            border-radius: 6px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .article-image figcaption {
+            font-size: 0.75rem;
+            color: #666;
+            margin-top: 6px;
+            font-style: italic;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .image-source {
+            display: inline-block;
+            color: #888;
+            font-weight: 600;
+            font-style: normal;
+            margin-left: 4px;
+        }
+
+        .next-edition-box {
+            text-align: center;
+            margin: 30px auto 20px;
+            padding: 15px;
+            background-color: #faf4f4;
+            border-radius: 6px;
+            border: 1px dashed #e3d3d3;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .next-edition-box p {
+            margin: 0;
+            font-size: 0.8rem;
+            color: #614a4c;
+        }
+
+        .back-link-container {
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .btn-read {
+            display: inline-block;
+            padding: 6px 14px;
+            background-color: #f7d6d7;
+            color: #4a3b3c;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer {
+            background-color: #faf5f5;
+            color: #4a3b3c;
+            text-align: center;
+            padding: 25px 15px;
+            margin-top: 40px;
+            border-top: 1px solid #f0e8e8;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .footer-brand {
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .footer-content p {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .social-links a {
+            color: #4a3b3c;
+            text-decoration: none;
+            margin: 0 8px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .copyright {
+            font-size: 0.7rem;
+            opacity: 0.5;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -50,27 +368,98 @@
         <article class="article-content">
             
             <p class="lead-paragraph">
-                O tapete vermelho deixou de ser apenas uma passarela de vestidos bonitos para se tornar um verdadeiro campo de batalha de marketing, contratos milionários e egos. Por trás de cada look épico (ou desastroso), existem desentendimentos de bastidores, vestidos de arquivo danificados e <i>stylists</i> desafiando as maiores casas de luxo do mundo.
+                O tapete vermelho há muito tempo deixou de ser apenas uma vitrine de vestidos bonitos e elegantes. Hoje, os eventos de gala tornaram-se verdadeiros palcos de disputas estratégicas, contratos milionários de exclusividade e embates de ego entre estilistas, casas de alta-costura e os maiores <i>stylists</i> de Hollywood.
             </p>
 
-            <h2>1. Vestidos de Arquivo vs. Preservação Histórica</h2>
+            <p class="lead-paragraph">
+                Por trás de cada imagem impecável que viraliza nas redes sociais, escondem-se dramas intensos, decisões tomadas no último minuto e polêmicas que movimentam a indústria por meses.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" alt="Desfile de moda e bastidores">
+                <figcaption>Os bastidores do Red Carpet envolvem disputas acirradas entre grifes. <span class="image-source">(Fonte: Unsplash)</span></figcaption>
+            </figure>
+
+            <h2>1. Vestidos de Arquivo Histórico: Preservação Cultural vs. Espetáculo</h2>
+            
             <p>
-                A maior febre entre as celebridades é resgatar peças vintage de acervos lendários. No entanto, essa tendência acendeu um debate tenso: até que ponto vale a pena arriscar a integridade de um vestido histórico por alguns minutos de fotos no Met Gala? Os bastidores esquentaram com historiadores acusando <i>stylists</i> de colocarem o engajamento acima da preservação cultural.
+                A busca pelo visual perfeito levou muitas celebridades a trocar as coleções atuais por peças raras e históricas retiradas diretamente de museus e arquivos privados.
             </p>
 
-            <h2>2. As Tretas Silenciosas entre Stylists e Grifes</h2>
             <p>
-                Nem tudo são flores na hora de "emprestar" um visual. Um dos maiores segredos dos bastidores são as brigas por exclusividade. Muitas vezes, grifes famosas barram o empréstimo de vestidos para certas celebridades de última hora ou tentam impor alterações no visual sem o consentimento da equipe da estrela — o que já fez <i>stylists</i> famosos trocarem o look da celebridade dentro da van a caminho do evento!
+                No entanto, essa obsessão pelo "inédito e vintage" gerou uma das maiores controvérsias do mundo da moda recente. Historiadores de arte e conservadores de moda ergueram alertas contundentes sobre o dano irreversível que o uso de vestidos históricos causa a tecidos antigos, costuras delicadas e bordados artesanais.
             </p>
 
-            <h2>3. Sustentabilidade ou Estratégia? O Reuso de Looks</h2>
             <p>
-                Repetir vestido no Red Carpet costumava ser visto como um erro brutal. Hoje, virou um manifesto. Celebridades que decidem "reciclar" vestidos icônicos de premiações passadas ou adaptar peças antigas dominam as manchetes. Mas fica a dúvida no ar: é conscientização genuína ou apenas uma jogada mestre de relações públicas para viralizar?
+                O calor do corpo, a umidade, a maquiagem e a própria pressão do movimento colocam em risco peças que deveriam ser preservadas para o patrimônio cultural humano.
             </p>
 
-            <!-- Aviso do próximo post -->
+            <p>
+                A grande questão levantada nos bastidores é: até que ponto a busca por curtidas e engajamento justifica colocar em risco uma obra de arte da história da vestimenta?
+            </p>
+
+            <figure class="article-image">
+                <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=800&q=80" alt="Vestido vintage de alta-costura">
+                <figcaption>Peças vintage de acervos históricos exigem cuidados extremos. <span class="image-source">(Fonte: Unsplash)</span></figcaption>
+            </figure>
+
+            <h2>2. A Guerra Silenciosa nos Bastidores: Stylists e Grandes Grifes</h2>
+            
+            <p>
+                Engana-se quem pensa que a relação entre uma celebridade e uma grande grife de luxo é sempre harmoniosa. Nos bastidores dos grandes eventos, ocorrem batalhas contratuais acirradas.
+            </p>
+
+            <p>
+                Muitas <i>maisons</i> impõem regras rígidas: exigem exclusividade total, controlam como o cabelo e a maquiagem devem ser feitos, e até tentam proibir a celebridade de usar joias de marcas concorrentes.
+            </p>
+
+            <p>
+                Não são raros os momentos em que <i>stylists</i> renomados precisam tomar decisões drásticas a poucas horas de a van partir para o evento.
+            </p>
+
+            <p>
+                Desentendimentos sobre ajustes no caimento da roupa, recusas de grifes em vestir determinados corpos ou mudanças repentinas nos contratos já fizeram visuais completos serem descartados minutos antes da entrada no tapete vermelho. A tensão entre a visão artística e os interesses comerciais das marcas nunca esteve tão alta.
+            </p>
+
+            <h2>3. Sustentabilidade, Reuso e o Fenômeno do "Look Reciclado"</h2>
+            
+            <p>
+                Historicamente, repetir um vestido no tapete vermelho era considerado um erro brutal de etiqueta e um prato cheio para críticas maldosas na imprensa.
+            </p>
+
+            <p>
+                Hoje, vivenciamos uma reviravolta cultural: o reuso de roupas e a adaptação de acervos pessoais tornaram-se um poderoso manifesto de moda sustentável.
+            </p>
+
+            <p>
+                Grandes nomes do cinema e da música vêm reescrevendo essa regra ao resgatarem vestidos que já usaram anos atrás, ou mesmo peças icônicas do guarda-roupa de suas famílias.
+            </p>
+
+            <p>
+                Porém, a polêmica persiste nos bastidores da crítica: enquanto parte do público celebra o movimento como uma atitude genuína em prol do meio ambiente, analistas de moda questionam se muitas dessas escolhas não passam de jogadas calculadas de Relações Públicas para moldar uma imagem pública consciente.
+            </p>
+
+            <figure class="article-image">
+                <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=800&q=80" alt="Look sofisticado de moda sustentável">
+                <figcaption>Reaproveitar looks icônicos tornou-se um manifesto de estilo. <span class="image-source">(Fonte: Unsplash)</span></figcaption>
+            </figure>
+
+            <h2>4. Estética de Impacto vs. Conforto: O Limite da Ousadia</h2>
+            
+            <p>
+                Até onde vai o limite da arte no vestuário? Nos últimos anos, acompanhamos peças estruturadas que impedem as celebridades de se sentarem, corsets com amarrações extremas que dificultam a respiração e sapatos com saltos arquitetônicos quase impossíveis de caminhar.
+            </p>
+
+            <p>
+                Essa busca por formatos conceituais e esculturais divide opiniões na indústria da moda.
+            </p>
+
+            <p>
+                De um lado, defende-se a moda como performance pura e expressão artística sem limites. Do outro, critica-se a imposição do desconforto extremo em nome da atenção midiática, reacendendo debates antigos sobre a relação entre a vestimenta e a libertação do corpo humano.
+            </p>
+
             <div class="next-edition-box">
-                <p>✨ <b>Próxima matéria desta categoria:</b> Em breve novos bastidores do mundo da moda!</p>
+                <p>✨ <b>Próxima matéria desta categoria:</b> Fique atenta! Na próxima semana abordaremos os bastidores das semanas de moda de Paris e Milão.</p>
             </div>
 
         </article>
