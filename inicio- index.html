@@ -19,6 +19,7 @@
             line-height: 1.6;
         }
 
+        /* Header Minimalista */
         .top-header {
             background-color: #ffffff;
             padding: 15px 10px;
@@ -58,6 +59,7 @@
             border-radius: 2px;
         }
 
+        /* Menu Lateral */
         .side-nav {
             position: fixed;
             top: 0;
@@ -143,9 +145,10 @@
             color: #4a3b3c;
         }
 
+        /* Banner Principal */
         .hero-aesthetic {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
             background-color: #faf4f4;
             border-bottom: 1px solid #f0e8e8;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -158,8 +161,9 @@
             text-transform: uppercase;
         }
 
+        /* Conteúdo Principal */
         main {
-            max-width: 800px;
+            max-width: 650px;
             margin: 30px auto;
             padding: 0 15px;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -174,9 +178,10 @@
             letter-spacing: 1px;
         }
 
+        /* Cartões em lista (um embaixo do outro) */
         .topics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            display: flex;
+            flex-direction: column;
             gap: 20px;
         }
 
@@ -188,24 +193,25 @@
             background-color: #fff;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
         }
 
         .topic-card h3 {
             margin-top: 0;
-            font-size: 1.05rem;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
             color: #2c2c2c;
         }
 
         .topic-card p {
             font-size: 0.85rem;
             color: #666;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .btn-read {
             display: inline-block;
-            padding: 8px 16px;
+            padding: 8px 18px;
             background-color: #f7d6d7;
             color: #4a3b3c;
             text-decoration: none;
@@ -214,9 +220,9 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            align-self: center;
         }
 
+        /* Rodapé */
         footer {
             background-color: #faf5f5;
             color: #4a3b3c;
@@ -280,9 +286,9 @@
 
             <div class="nav-links">
                 <span class="nav-category-label">Categorias</span>
-                <a href="index.html" class="active">Início</a>
-                <a href="historia-da-moda.html">História da Moda</a>
-                <a href="fofocas-moda.html">Fofocas & Bastidores</a>
+                <a href="inicio- index.html" class="active">Início</a>
+                <a href="index.html">História da Moda</a>
+                <a href="fofocas - index.html">Fofocas & Bastidores</a>
                 <a href="tendencias.html">Tendências</a>
             </div>
         </nav>
@@ -301,13 +307,15 @@
             <article class="topic-card">
                 <h3>História da Moda</h3>
                 <p>Entenda o impacto cultural de cada época no modo de vestir da humanidade.</p>
-                <a href="historia-da-moda.html" class="btn-read">Ver Categoria</a>
+                <!-- APONTA PARA O index.html (HISTÓRIA DA MODA) -->
+                <a href="index.html" class="btn-read">Ver Categoria</a>
             </article>
 
             <article class="topic-card">
                 <h3>Fofocas & Bastidores</h3>
                 <p>Segredos do mundo das grifes, polêmicas e o lifestyle da alta sociedade.</p>
-                <a href="fofocas-moda.html" class="btn-read">Ver Categoria</a>
+                <!-- APONTA PARA fofocas - index.html -->
+                <a href="fofocas - index.html" class="btn-read">Ver Categoria</a>
             </article>
 
             <article class="topic-card">
